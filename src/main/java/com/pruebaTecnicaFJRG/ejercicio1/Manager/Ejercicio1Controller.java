@@ -22,6 +22,8 @@ import java.text.SimpleDateFormat;
 public class Ejercicio1Controller {
 
 
+	protected static final String URL_TOKEN = "http://localhost:8080/token";
+
 	@Bean
 	@GetMapping("/get-token")
 	public Map<String, String> getString() {
@@ -47,7 +49,7 @@ public class Ejercicio1Controller {
 		String token = ""; 
 		Unirest.setTimeouts(0, 0);
 		try {
-			HttpResponse<JsonNode> response = Unirest.post("http://localhost:8080/token")
+			HttpResponse<JsonNode> response = Unirest.post(URL_TOKEN)
 			  .header("Content-Type", "application/json")
 			  .body("{\n\"username\":\"auth-vivelibre\",\n\"password\":\"password\"\n}")
 			  .asJson();
