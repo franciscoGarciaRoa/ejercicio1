@@ -9,7 +9,6 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import org.json.JSONObject;
-import org.springframework.context.annotation.Bean;
 
 import java.util.Map;
 import java.util.LinkedHashMap;
@@ -24,7 +23,6 @@ public class Ejercicio1Controller {
 
 	protected static final String URL_TOKEN = "http://localhost:8080/token";
 
-	@Bean
 	@GetMapping("/get-token")
 	public Map<String, String> getString() {
 
